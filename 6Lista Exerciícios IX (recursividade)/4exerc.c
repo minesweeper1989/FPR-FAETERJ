@@ -1,7 +1,7 @@
-/*Questão 04:
-Fazer uma função recursiva que, dado um
-número inteiro N, exiba o mesmo na base 2
-(binária).*/
+/*QuestÃ£o 04:
+Fazer uma funÃ§Ã£o recursiva que, dado um
+nÃºmero inteiro N, exiba o mesmo na base 2
+(binÃ¡ria).*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -19,7 +19,7 @@ int main (){
 }
 
 void binario (int n){
-	if(n!=0){
+	if(n>0){
 		binario(n/2);
 		printf("%d", n%2);
 	}
