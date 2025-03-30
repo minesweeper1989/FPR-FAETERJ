@@ -1,15 +1,14 @@
-/*Quest„o 05:
-Pede-se a implementaÁ„o de uma funÁ„o
+/*Quest√£o 05:
+Pede-se a implementa√ß√£o de uma fun√ß√£o
 recursiva que exiba os n primeiros termos de
-uma PG (Progress„o GeomÈtrica), onde a1 È o
-seu primeiro termo e q a raz„o.
+uma PG (Progress√£o Geom√©trica), onde a1 √© o
+seu primeiro termo e q a raz√£o.
 
 formula: An = A1 . Q^n-1*/
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
 
-void PG (int primeiro, int razao, int quant);
+void PG (int quant, int razao, int primeiro);
 
 int main (){
 	int n, A1, Q;
@@ -21,16 +20,15 @@ int main (){
 	scanf("%d", &n);
 	
 	printf("\n\nsua PG:");
-	PG(A1, Q, n);
+	PG(n, Q, A1);
 	
 	return 0;
 }
 
-void PG (int primeiro, int razao, int quant){
-	int termo;
-	if(quant!=0){
-		termo=primeiro*pow(razao,quant-1);
-		PG(primeiro, razao, quant-1);
-		printf(" %d", termo);
+void PG (int quant, int razao, int primeiro){
+	if(quant>0){
+		//a1, a2, a3, a4.. an
+		printf(" %d", primeiro);
+		PG(quant-1, razao, primeiro*razao);
 	}
 }
