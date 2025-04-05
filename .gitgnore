@@ -1,0 +1,37 @@
+# Ignore executables and binaries
+*.exe
+*.out
+*.bin
+
+# Ignore object and debug files
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.lib
+*.dylib
+
+# Ignore IDE/editor-generated files
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# Ignore build and dependency directories
+build/
+dist/
+bin/
+obj/
+Debug/
+Release/
+
+# Ignore system/IDE-specific files
+.DS_Store
+.vscode/
+.idea/
+*.user
+
+# Keep empty directories
+!.gitkeep
