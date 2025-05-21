@@ -1,15 +1,15 @@
-/*Questão 04:
-Considere a existência de um vetor de structs
-com quant posições, onde cada uma destas
+/*QuestÃ£o 04:
+Considere a existÃªncia de um vetor de structs
+com quant posiÃ§Ãµes, onde cada uma destas
 armazena os seguintes dados sobre um grupo
-de pessoas: nome (string), gênero (char) e
-idade (int). Pede-se uma função que determine
-se os elementos deste vetor estão ordenados e
+de pessoas: nome (string), gÃªnero (char) e
+idade (int). Pede-se uma funÃ§Ã£o que determine
+se os elementos deste vetor estÃ£o ordenados e
 retorne 1, caso estejam ordenados, e 0, caso
-contrário.
-Observação: o vetor será considerado ordenado se
-estiver organizado crescentemente em função da
-idade. Porém, no caso de pessoas com a mesma
+contrÃ¡rio.
+ObservaÃ§Ã£o: o vetor serÃ¡ considerado ordenado se
+estiver organizado crescentemente em funÃ§Ã£o da
+idade. PorÃ©m, no caso de pessoas com a mesma
 idade, estas devem estar ordenadas crescentemente
 pelo nome.*/
 #include<stdio.h>
@@ -115,17 +115,11 @@ int checar (int tamanho, grupo pessoa[tamanho]){
 			return 0;
 		}
 		if(pessoa[i].idade==pessoa[i-1].idade){
-			j=0;
-			while(pessoa[i].nome[j]!='\0' || pessoa[i-1].nome[j]!='\0'){
-				if(pessoa[i].nome[j]<pessoa[i-1].nome[j]){
-					return 0;
-				}
-				if(pessoa[i].nome[j]>pessoa[i-1].nome[j]){
-					break;
-				}
-				j++;
+			if(strcmp(pessoa[i].nome,pessoa[i-1].nome)<0){
+				return 0;
 			}
 		}
+		
 	}
 	return 1;
 }
@@ -136,6 +130,5 @@ void exibir_vetor (int tamanho, grupo pessoa[tamanho]){
 		printf("\n\nPESSOA %d.\nNOME: %s\nIDADE: %d\nSEXO: %c", i+1,pessoa[i].nome,pessoa[i].idade,pessoa[i].sexo);
 	}
 }
-
 
 
