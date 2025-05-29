@@ -1,9 +1,10 @@
-/*Questão 04:
-Desenvolver uma função que, dado um arquivo
-texto contendo números, determine se estes
+/*QuestÃ£o 04:
+Desenvolver uma funÃ§Ã£o que, dado um arquivo
+texto contendo nÃºmeros, determine se estes
 encontram-se ordenados crescentemente.*/
 #include<stdio.h>
 #include<stdlib.h>
+#include<limits.h>
 
 int crescente(char nomearq[]);
 
@@ -19,7 +20,7 @@ int main (){
 
 int crescente(char nomearq[]){
 	FILE *arq;
-	int numero, anterior, primeiro=0;
+	int numero, anterior=INT_MIN;
 	
 	arq=fopen(nomearq, "r");
 	if(!arq){
@@ -27,14 +28,11 @@ int crescente(char nomearq[]){
 		return -1;
 	}
 	while(fscanf(arq, "%d", &numero)!=EOF){
-		if(primeiro){
-			if(anterior>numero){
-				return 0;
-			}
-		} else{
-			primeiro=1;
+		if(anterior>numero){
+			return 0;
 		}
-		anterior=numero;
+		
+	anterior=numero;
 	}
 	fclose(arq);
 	return 1;
